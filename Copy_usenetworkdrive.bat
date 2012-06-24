@@ -1,8 +1,8 @@
 rem ネットワークドライブを張ってディレクトリををXCOPYでバックアップするスクリプト
 
 
-set COPYFROM="testdata"
-set COPYTO="\\JINBAG\gak\ダウンロード"
+set COPYFROM="testdir"
+set COPYTO="\\samba\share"
 set PASSWORD=PW
 set USERNAME=USERNAME
 set DRIVENAME=Y
@@ -13,7 +13,6 @@ set SYSTIME=%SYSTIME:~0,-3%
 set SYSDATETIME=%SYSDATE%%SYSTIME%
 
 if exist %DRIVENAME%:\. net use %DRIVENAME%: /delete /yes
-rem net use z: \\samba\share [password] /user:[username]
 rem OSのファイル共有で一度つないでいたらこっち
 net use %DRIVENAME%: %COPYTO%
 rem OSのファイル共有で一度もつないでいなかったらこっち
